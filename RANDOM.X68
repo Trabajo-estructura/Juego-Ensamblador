@@ -2,8 +2,7 @@
 * RANDOM NUMBER GENERATOR
 *   
 * It generates a pseudorandomly number specified by
-* LOW limit and TOP limit. Registers have to be
-* set as parameters to the routine through the stack.
+* LOW limit and TOP limit.
 * 
 * INPUT:    (LOW) as low limit and (TOP) as top limit
 * OUTPUT:   Random number in D3 register
