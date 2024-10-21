@@ -1,0 +1,24 @@
+En este apartado os voy a enseñar a como podéis usar Python en Visual Studio Code.
+
+Pasos:
+
+1. Ir a Extensiones de VSCode y escribir en la barra de búsqueda "Python".
+La primera opción que os salga "Python" a secas de Microsoft es la que debéis insstalar.
+Cuando lo tengáis, os pedirá que seleccionéis un intérprete. En principo os lo detecta
+automáticamente pero si es lo pide seguid las recomendaciones de VSCode o bién podéis
+instalar el intérprete de Python desde su página web.
+
+2. Para proyectos medios o grandes. Es bastante recomendable crear un enterno virtual (venv)
+para poder tener las dependecias juntas y los módulos utilizados en dicho proyecto.
+Para ello, cuando tengamos ya un proyecto abierto (una carpeta o directorio),
+escribímos en terminal: python -m venv venv
+Tras ello, lo activamos con: ./venv/Scripts/activate
+Ya podemos empezar a crear archivos. 
+
+Importante: Para crear archivos de Python añadir la extensión .py
+
+3. Para instalar módulos y gestionar los paquetes en python se utiliza pip
+Si queremos instalar un módulo para trabajar por ejemplo con arrays o fórmulas matemáticas
+hacemos lo siguiete: pip install numpy.
+Para múltiples: pip install numpy,pandas,tkinter  (por ejemplo)
+
