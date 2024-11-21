@@ -18,7 +18,7 @@ with open('original_logo_pixel_file_opti.bin', 'rb') as archivo:
             if len(bytes_leidos) < 3:
                 break  # Final del archivo inesperado
             # Desempaquetar los valores BGR
-            b, g, r = struct.unpack('BBB', bytes_leidos)
+            _, b, g, r = struct.unpack('BBB', bytes_leidos)
             # Asignar los valores al píxel en la imagen
             imagen_recuperada[y, x] = [b, g, r]
 
