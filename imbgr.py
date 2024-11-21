@@ -20,7 +20,7 @@ with open("pixel_file.bin", "wb") as archivo:
     for y in range(alto):
         for x in range(ancho):
             # Obtener el valor BGR del píxel en (x, y)
-            _, b, g, r = imagen[y, x]
+            b, g, r = imagen[y, x]
             archivo.write(struct.pack("BBBB", 0, b, g, r))
     archivo.close()
 print("Finalizado")
