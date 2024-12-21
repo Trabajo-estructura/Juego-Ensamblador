@@ -1,0 +1,30 @@
+Hola a todos. He estado pensado un poco y en vista de la dificultad que representa el hecho de ir cambiando de buffer e ir
+repintando las imágenes (que intuyo que requiere bastante tiempo) y además, no veo con buenos ojos el descenso de la barra
+de vida de los pokémon. Por lo tanto, postulo esta nueva idea. Vamos a diseñar el juego "principalmente" sobre el buffer
+principal. De este modo podemos trabajar directamente sobre el modelado de las imágenes y sus actualizaciones.
+(Por ejemplo en la derrota de uno, por el momento basta en mostrar un recuadro en blanco en la posición que ocupaba).
+Con respecto a la barra de vida he pensado lo siguiente. Ni mucho menos vamos a utilizar fórmulas de cálculo de daño y 
+lo tipos efectivos son reduntantes. Vamos ha tener definido una barra de vida de un tamaño inicial en píxeles (por ejemplo  50).
+Tendremos además unos punteros a distintos niveles de daño (para que se vea que no siempre se hace el mismo daño), que son
+de 10 píxeles, 30 y 40 por ejemplo. La idea es que usando el RANDOM, generémos un número, y en función de dicho número
+hacemos uno de los 3 daños y actualizamos la barra de vida (verde) sobreponiendo una parra del tamaño de daño obtenido
+de color blanco. Si por ejemplo se obteiene 10px, entonces ponemos una barra de 10px blanco sobre la barra verde de 50px.
+Ahora tenemos 40px. Si luego se selecciona 40px, podemos decir que el golpe es crítico y se termina el combate. Si no lo es, 
+tenemos que evitar que se seleccione nuevamente 10px pues no se vería nada, por lo tanto buscamos el inmediatamente superior
+para que haga daño. (SI NOS DA TIEMPO podemos hacer que si se selecciona el mismo, aunque este no haga nada, podemos decir
+que el ataque ha fallado). Por último, si estamos a 10px de vida (el final), ya no podemos hacer daño con los anteriores, por lo tanto,
+la idea es tener un daño igual a la barra de la vida y, cuando se dé la condición (de no poder hacer daño), simplemente 
+buscamos y dibujamos la barra máxima sobre la barra de vida y el combate termina. 
+
+IMPORTANTE!
+
+Dudo que haya tiempo a implementar combates contra entrenadores. Sale más rentable hacer combates individuales con pokémon
+(SI HAY TIEMPO, ponemos el sprite de un entrenador y poco más, PERO SOLO CON UN POKÉMON) y al final del combate, si ganamos, 
+reseteamos todo y mostramos el siguiente pokémon, hasta un máximo de 5 combates por ejemplo. (Al terminar todo, ahí sí que
+veo útil la utilización y limpiado de pantalla mediante el doble buffer). 
+
+Con respecto al menú, se dibuja dabajo de la pantalla un rectángulo con trazado negro (sin relleno ya que el fondo de combate
+es totalmente blanco) que contiene 4 movimientos (NADA DE MOVIMIENTOS DE CAMBIO DE ESTADO, SOLO SI DA TIEMPO).
+Esta caja se mantiene en todo momento, solo cámbia al final de la partida.
+
+Con esto dicho feliz navidad!
