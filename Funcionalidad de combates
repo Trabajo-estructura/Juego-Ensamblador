@@ -16,6 +16,25 @@ que el ataque ha fallado). Por último, si estamos a 10px de vida (el final), ya
 la idea es tener un daño igual a la barra de la vida y, cuando se dé la condición (de no poder hacer daño), simplemente 
 buscamos y dibujamos la barra máxima sobre la barra de vida y el combate termina. 
 
+Aquí tenéis un ejemplo de las barras.
+
+Barra de vida: -------------------------------------------------- 50px
+
+Barras de daño: ---------- 10px, --------------------20px, ----------------------------- 30px, -------------------------------------------------- 50px (necesária)
+(PODEMOS TENER MÁS BARRAS DE DAÑO, PERO MÁS TIEMPO EN CALCULAR)
+
+1. Se hace daño 10px
+Barra de vida: ---------------------------------------- 40px
+2. Se hace daño 20px o 50px
+Barra de vida: -------------------- 30px (para 20px, 0px para 50px (CRÍTICO))
+3. Se hace daño 10px
+Barra de vida: -------------------- 30px (no se vé nada, HA FALLADO)
+4. Se hace daño 30px
+Barra de vida: -------------------- 20px
+5. Se hace daño 50px
+Barra de vida: 0px
+Si en el anterior hubiera sido 30px, daría 
+
 IMPORTANTE!
 
 Dudo que haya tiempo a implementar combates contra entrenadores. Sale más rentable hacer combates individuales con pokémon
@@ -25,6 +44,8 @@ veo útil la utilización y limpiado de pantalla mediante el doble buffer).
 
 Con respecto al menú, se dibuja dabajo de la pantalla un rectángulo con trazado negro (sin relleno ya que el fondo de combate
 es totalmente blanco) que contiene 4 movimientos (NADA DE MOVIMIENTOS DE CAMBIO DE ESTADO, SOLO SI DA TIEMPO).
+Podemos tener un total de 16 (para que sea par ya que solo es texto, que se seleccionan con RANDOM).
 Esta caja se mantiene en todo momento, solo cámbia al final de la partida.
+
 
 Con esto dicho feliz navidad!
