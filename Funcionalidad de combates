@@ -26,26 +26,64 @@ Barras de daño: ---------- 10px, --------------------20px, --------------------
 1. Se hace daño 10px
 Barra de vida: ---------------------------------------- 40px
 2. Se hace daño 20px o 50px
-Barra de vida: -------------------- 30px (para 20px, 0px para 50px (CRÍTICO))
+Barra de vida: ----------------------------- 30px (para 20px, 0px para 50px (CRÍTICO))
 3. Se hace daño 10px
-Barra de vida: -------------------- 30px (no se vé nada, HA FALLADO)
+Barra de vida: ----------------------------- 30px (no se vé nada, HA FALLADO)
 4. Se hace daño 30px
-Barra de vida: -------------------- 20px
+Barra de vida: -------------------- 20px       
 5. Se hace daño 50px
 Barra de vida: 0px
-Si en el anterior hubiera sido 30px, daría 
+
+Esta no es la única opción de daño, pero es la primera que se me ha ocurrido. OTRA POSIBLE OPCIÓN sería precísamente
+Tener las mismas barras de daño hechas, pero en función de un valor, no ir redibujando sobre la misma barra como en el caso
+anterior sino calcular la diferencia restante entre la barra de vida quitada y la disponible. Como sabemos cuantos 
+píxeles de vida nos quedan, podemos situar las coordenadas de dibujado del rectángulo blanco de daño justo al principio
+de la barra blanca de daño anterior. El límite entre la barra verde y blanca. A partir de aquí, ir avanzando (en coordenadas)
+e ir consumiendo la barra verde desde las coordenadas anteriores. 
+
+Ejemplo:
+Barra de vida: 
+
+Barra de vida: -------------------------------------------------- 50px
+
+Barras de daño: ---------- 10px, --------------------20px, ----------------------------- 30px, -------------------------------------------------- 50px (NO necesária)
+
+1. Daño de 10px                                       (x)
+Barra de vida: -------------------------------------------------- 50px
+Barra de vida: ---------------------------------------- 40px
+2. Daño de 20px                   (x) nueva
+Barra de vida: ---------------------------------------- 40px
+Barra de vida: -------------------- 20px
+3. Daño de 10px         (x) nueva           
+Barra de vida: -------------------- 20px
+Barra de vida: ---------- 10px
+4. Daño de 10px
+Barra de vida: ---------- 10px
+Barra de vida: 0px
+
+Es importante ver que en este caso, no hay que controlar el daño que hacemos. Ya que si por ejemplo tenenos 10 px de vida y hacemos 
+50px de daño, podemos dibujar la barra entera sobre la verde, (aunque técnicamente nos salimos de la pantalla) pero no tiene 
+ninguna influencia. ESTA OPCIÓN ME PARECE MÁS FÁCIL.
 
 IMPORTANTE!
 
 Dudo que haya tiempo a implementar combates contra entrenadores. Sale más rentable hacer combates individuales con pokémon
 (SI HAY TIEMPO, ponemos el sprite de un entrenador y poco más, PERO SOLO CON UN POKÉMON) y al final del combate, si ganamos, 
 reseteamos todo y mostramos el siguiente pokémon, hasta un máximo de 5 combates por ejemplo. (Al terminar todo, ahí sí que
-veo útil la utilización y limpiado de pantalla mediante el doble buffer). 
+veo útil la utilización y limpiado de pantalla mediante el doble buffer). Decir que podemos tener varios punteros 
+a un conjunto determiando de pokémon, para que, de uno en uno, estos sean aleatorios.
 
 Con respecto al menú, se dibuja dabajo de la pantalla un rectángulo con trazado negro (sin relleno ya que el fondo de combate
 es totalmente blanco) que contiene 4 movimientos (NADA DE MOVIMIENTOS DE CAMBIO DE ESTADO, SOLO SI DA TIEMPO).
 Podemos tener un total de 16 (para que sea par ya que solo es texto, que se seleccionan con RANDOM).
-Esta caja se mantiene en todo momento, solo cámbia al final de la partida.
+Los pokémon adeversários también tienen algunos de los 16 movimientos, (no necesáriamente idénticos a los del jugador).
+La selección del movimiento, para que el jugador sepa qué es lo que está seleccionado, puede ser un trazado rectángulo negro y
+poca cosa más. Esta caja se mantiene en todo momento, solo cámbia al final de la partida.
+Comentar que podemos tener música de fondo durante el combate, que es muy sencillo de implementar. Para cada ataque
+un pequeño efecto de sonido del antiguo, para que no sea tan monótono.
 
+Finalmente quiero añadir que tenemos ya las dos funciones que se requieren en la documentación del proyecto, de
+modo que si no nos da tiempo, NO HACE FALTA IMPLEMENTAR LA LECTURA CON RATÓN. Ya tenemos suficiente con
+el teclado.
 
 Con esto dicho feliz navidad!
