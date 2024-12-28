@@ -1,0 +1,85 @@
+28/12/2024
+
+Hola buenas. Esto es un readme que podemos ir actualizando cada vez que alguien quiera hacer una aportación.
+Creo que no será de gran utilidad.
+
+Alejandro ha actualizado el SYSTEM y SYSCONST con nuevas constantes. ATTACK1, (anteriormente SELECT) y ATTACK2 (anteriormente RETURN). 
+Es cierto que solo vamos a atacar y no vamos a tener un bolsa. 
+Por otro lado, creo que es más conveniente mantener SELECT (como teníamos antes) y cambiar RETURN por, directamente ATTACK.
+El SELECT viene a ser el nuevo X y el ATTACK el Z.
+
+Por cierto, he corregido algunos errores en SYSTEM que impedían la correcta lectua del teclado. Ahora os paso el código
+correctamente. Ahora la lectura de teclado funciona a la perfección.
+Otra cosa importante, es que NO no conviene deshabilitar el doble buffer por qué por experiencia podemos tener problemas.
+Aunque perdamos un poco de velocidad, lo único que podemos hacer es ir jugando con el limpiado de pantalla cuando toca.
+
+; --- KEYCODES ---------------------------------------------
+
+KBDLEFT         EQU         $25
+KBDUP           EQU         $26
+KBDRIGHT        EQU         $27
+KBDDOWN         EQU         $28
+ATTACK          EQU         'Z'
+SELECT          EQU         'X'
+PAUSE           EQU         ' '
+
+; ----------------------------------------------------------
+KBDUPD
+; UPDATE KEYBOARD INFO.
+; 6 -> UP
+; 5 -> DOWN
+; 4 -> LEFT
+; 3 -> RIGHT
+; 2 -> SELECT
+; 1 -> ATTACK
+; 0 -> PAUSE
+; INPUT     : NONE
+; OUTUT     : NONE
+; MODIFIES  : NONE
+; ----------------------------------------------------------
+    
+    MOVEM.L D0-D3,-(A7)
+    
+    ; READ FIRST PART TO CONVERT TO FRIENDLY FORMAT
+    MOVE.B #19,D0
+    MOVE.L #KBDUP<<24|KBDDOWN<<16|KBDLEFT<<8|KBDRIGHT,D1
+    TRAP #15
+    
+    ; CONVERT TO PROPER FORMAT
+    MOVE.W #3,D3
+RFIRST
+    LSL.L #8,D1
+    ROXL.B #1,D2
+    DBRA.W D3,RFIRST
+    
+    ; READ SECOND PART TO CONVERT TO FRIENDLY FORMAT
+    CLR.L D1
+    MOVE.L #SELECT<<16|ATTACK<<8|PAUSE,D1
+    TRAP #15
+    
+    ; CONVERT TO PROPER FORMAT
+    MOVE.W #2,D3
+RSECOND
+    LSL.L #8,D1
+    ROXL.B #1,D2
+    DBRA.W D3,RSECOND
+    
+    ; COMPUTE KBDEDGE
+    MOVE.B (KBDVAL),D0
+    NOT.B D0
+    AND.B D2,D0
+    MOVE.B D0,(KBDEDGE)
+    
+    ; STORE KBDVAL
+    MOVE.B D2,(KBDVAL)
+    
+    MOVEM.L (A7)+,D0-D3
+    
+    RTE   
+    
+; ----------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+NUEVA ACTUALIZACIÓN:
+
+--
