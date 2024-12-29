@@ -82,4 +82,12 @@ RSECOND
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 NUEVA ACTUALIZACIÓN:
 
---
+29/12/2004
+
+Acabo se subir la versión más actualizada del proyecto. Os pido porfavor que los miréis ya que hay bastantes cosas nuevas. Las sprites ya tienen formato apropiado y
+estoy trabajando para que se muestren correctamente. (Lo hace, pero veréis que hay un error debido a algo que no he tenindo en cuenta y que se puede solucionar).
+He añadido los ataques y sus punteros. Utilizamos BUFFERL para almacenar los sprites de los 5 pokémon oponentes (ya que es probable que si declaramos más
+almacenamiento nos quedemos sin memória). Por otro lado, hay otro buffer llamado TEAMBUF donde van a ir a parar los sprites del jugador. 
+Solo os pido que porfavor lo miréis y lo trasteéis. Si alguien tiene tiempo porfavor que vaya mirando lo del menú, (ya que ya tiene los punteros necesários declarados)
+Hemos de avanzar los máximo posible. Sería conveniente quedar lo antes posible para explicar cosas. Ya me decís.
+Un saludo a todos!
