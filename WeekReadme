@@ -91,3 +91,23 @@ almacenamiento nos quedemos sin memória). Por otro lado, hay otro buffer llamad
 Solo os pido que porfavor lo miréis y lo trasteéis. Si alguien tiene tiempo porfavor que vaya mirando lo del menú, (ya que ya tiene los punteros necesários declarados)
 Hemos de avanzar los máximo posible. Sería conveniente quedar lo antes posible para explicar cosas. Ya me decís.
 Un saludo a todos!
+
+;----------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------
+NUEVA ACTUALIZACIÓN:
+
+30/12/2024
+
+Acabo de subir la versión actualizada.
+Main: En el main se han imlplementado MENUINIT, MENUUP, MENUPLOT en sus respectivos lugares.
+MENU: Se inicializa el menú en MENUINIT, pongo la tecla left y right para cambiar de opción. Lo importante en MENUPLOT si quereis cambiar la zona en la que se encuentra
+el menú cambiad el ADD.W #$2810 los bytes menos significativos son las filas y los más significativos las columnas, ahora mismo el código esta para que 
+el siguiente texto de menú lo ponga directamente a la derecha del anterior, se puede hacer un DBRA para que lo ponga el siguiente ITEM
+del menú en la fila siguiente (si nos sobra tiempo), en el ADD de .CONT (ADD.W   #$1000,D1) le digo que el siguiente lo ponga en la siguiente columna
+(con un poco de margen entre las dos opciones porque queda mejor esteticamente).
+SYSTEM: se ha optimizado KBDUPD
+CONST: Se han creado 3 submenus para los tres pokemons que vamos a tener, cada uno tiene dos ataques distintos y que tienen sentido para el tipo de pokemon que son
+
+Eso sería todo espero que sigamos progresando así de bien. Un saludo y que paseis una feliz Nochevieja!
+
+                                
