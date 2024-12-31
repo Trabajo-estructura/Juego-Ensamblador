@@ -110,4 +110,20 @@ CONST: Se han creado 3 submenus para los tres pokemons que vamos a tener, cada u
 
 Eso sería todo espero que sigamos progresando así de bien. Un saludo y que paseis una feliz Nochevieja!
 
+----------------------------------------------------------------------------------------------------------------------------------------------
+NUEVA ACTUALIZACIÓN:
+
+31/12/2024
+
+Acabo se subir la versión más nueva del proyecto. Todo lo que hemos hecho hasta ahora. Lo único que queda es gestionar el combate y las barras de salud, así como
+sacar a los siguientes pokémon (los primeros son aleatorios, todos los que vengan después son secuenciales). Finalmente esclarecer un poco lo del menú.
+Tendremos que tener en cuenta el sincronismo, ver que, en efecto, el programa espera hasta que hayamos pulsado una tecla para atacar por ejemplo, y que al 
+ejectuar el programa no nos pasa de largo. Esto se podrá hacer a través de una rutinas que son BTLUPD y PSUPD, a las que he añadido un pseducoódigo para ver a donde
+queremos llegar. Por cierto, aclarar que las barras de salud, está implementadas de tal forma que si un pokemon, sea cual sea es derrotado, solo SU PROPIA parra 
+se reinicia. Podéis ver en las constantes y variables un poco su documentación. Eso es todo.
+
+Feliz Nochevieja a todos!
+
+
+
                                 
