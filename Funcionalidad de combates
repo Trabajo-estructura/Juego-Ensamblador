@@ -87,3 +87,44 @@ modo que si no nos da tiempo, NO HACE FALTA IMPLEMENTAR LA LECTURA CON RATÓN. Y
 el teclado.
 
 Con esto dicho feliz navidad!
+
+
+Procedo a epecificar los movimientos de cada pokemon para dejarlo ya claro:
+
+TEAM
+
+Charizard:
+Lanzallamas -->Fuego (Efectivo contra articuno)
+Pulso Umbrio-->Siniestro (Efectivo contra Mew/Mew2)
+
+Blastoise:
+Hidropulso-->Agua(Efectivo contra Moltres)
+Triturar-->Siniestro (Efectivo contra Mew/Mew2)
+
+Venasaur:
+Rayo Solar-->Planta(Efectivo contra Zapdos, que se le va a hacer)
+Zumbido-->Bicho (Efectivo contra Mew/Mew2)
+
+Moltres:
+Lanzallamas -->Fuego (Efectivo contra Venasaur)
+Viento afil. -->Normal 
+
+Articuno:
+Hidropulso-->Agua(Efectivo contra Charizard)
+Viento afil. -->Normal 
+
+Zapdos:
+Rayo--> Electrico (Efectivo contra Blastoise)
+Hiper rayo -->Normal 
+
+Mew
+Clonar--> Utilizará un ataque aleatorio de los 3 tipos (si da tiempo, si no se piensa otro ataque)
+Hiper rayo -->Normal 
+
+Mew2
+Lanzallamas--> Efectivo contra Ven.
+Hidropulso-->Efectivo contra Char.
+Rayo--> Efectivo contra Blast.
+
+Soy consciente de que Mew2 tiene uno más, pero creo que el hecho de que no haya un poquemon de tu equipo que siempre vaya a estar a salvo lo hace bastante más interesante,
+otra opción es que tenga 2 movimientos y que uno de ellos siempre sea superefectivo.
