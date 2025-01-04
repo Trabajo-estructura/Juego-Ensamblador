@@ -131,6 +131,7 @@ Actualización:
 Acabo de actualizar la Práctica final, no ha cambiado mucho, lo siento, no he tenido mucho tiempo. El único cambio hecho ha sido mejorar la
 visualización del menú y sus coloros, además he detectado un problema y es que a veces se genera en tu equipo la imagen de tus tres pokemon,
 de manera que se fusionan los tres en uno, aunque solo me ha llegado a pasar una vez. Eso sería todo.
+----------------------------------------------------------------------------------------------------------------------------------------------
 
 Actualización --> Hugo:
 03/01/2025
@@ -145,5 +146,15 @@ Resumen:
 En el menú (en teoría) se comprueba ya la tecla de ataque y el movimiento seleccionado al utilizarla actualiza las nuevas variables de movimiento seleccionado,
 por parte de Sysbattle hay un esqueleto de lo que podría llegar a ser la gestión de la lógica del combate.
 
+----------------------------------------------------------------------------------------------------------------------------------------------
+Actualización --> Hugo:
+04/01/2025
 
-                                
+Basicamente he avanzado en toda la lógica del combate y la gestión de turnos.
+
+ficheros modificados:
+
+Sysbattle
+Vars
+
+
